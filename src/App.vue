@@ -4,7 +4,9 @@
     <router-link to="/ejercicio1">Ejercicio1</router-link> |
     <router-link to="/ejercicio2">Ejercicio2</router-link> |  
     <router-link to="/ejercicio3">Ejercicio3</router-link> |  
-    <router-link to="/ejercicio4">Ejercicio4</router-link>  
+    <router-link to="/ejercicio4">Ejercicio4</router-link> | 
+    <router-link to="/ejercicio5">Ejercicio5</router-link>  
+
   </div>
   <router-view/>
 </template>

@@ -31,6 +31,7 @@ export default {
         let username=ref()
         let auth=ref(true)
         const login=()=>{
+            console.log(x1)
             username.value=x1.lastChild.value
             auth.value=false
         }
