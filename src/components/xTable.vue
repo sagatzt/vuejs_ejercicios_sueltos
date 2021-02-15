@@ -2,24 +2,18 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>id</th>
                 <th>concepto</th>
                 <th>precio</th>
                 <th>cantidad</th>
-                <th>subtotal</th>                
-                <th>Modif</th>     
-                <th>Elimi</th>     
+                <th>subtotal</th>      
             </tr>
         </thead>
         <tbody>
             <tr v-for="(dato,i) in datos" :key="i">
-                <td>{{ i }}</td> 
                 <td>{{ dato.concepto }}</td> 
                 <td>{{ dato.precio }}</td>
                 <td>{{ dato.cantidad }}</td>
                 <td>{{ subTotal(dato.precio,dato.cantidad)}}</td>
-                <td><a href="#">Mod</a></td>
-                <td><a href="#">Eli</a></td>
             </tr>
         </tbody>
     </table>
