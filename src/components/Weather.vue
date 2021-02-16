@@ -15,7 +15,7 @@
         </div>
     </div>
 </template>
-
+ 
 <script>
 import { ref, reactive, watch } from 'vue'
 export default {
@@ -23,7 +23,9 @@ export default {
     props: {},
     setup(){
         let provincia=ref("00")
+        let municipio=ref("00")
         let provincias=reactive([])
+        let municipios=reactive([])
         fetch('https://raw.githubusercontent.com/IagoLast/pselect/master/data/provincias.json')
             .then(res=>res.json())
             .then(datos=>{
@@ -36,8 +38,8 @@ export default {
             console.log("current: " + current, "old: " + old)
         })
         return {
-            provincia,
-            provincias
+            provincia, provincias,
+            municipio, municipios
         }
     }
 
