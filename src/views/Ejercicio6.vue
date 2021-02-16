@@ -10,16 +10,21 @@
           </p>
           <p>Cuando seleccione el municipio, deberá aparecer la información
             meteorológica y los datos demográficos y geográficos del municipio.</p>
-
+        </div>
+        <div class="col-12">
+          <Weather />
         </div>
       </div>
     </div> 
 </template>
 
 <script>
+import Weather from '@/components/Weather'
+
 export default {
     name: 'Ejercicio5',
     components: {
+      Weather
     }
 }
 </script>

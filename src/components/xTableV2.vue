@@ -18,11 +18,13 @@
         </thead>
         <tbody>
             <tr v-for="(dato,i) in datos" :key="i">
-                <td>{{ dato.concepto }}</td> 
-                <td>{{ dato.precio }}</td>
+                <td><input size="20" type="text" v-model="dato.concepto"></td> 
+                <td><input size="5" type="number" step="any" v-model="dato.precio"></td>
                 <td><input size="4" type="number" v-model="dato.cantidad"></td>
                 <td>{{ dato.precio*dato.cantidad}}</td>
-                <td><button class="btn btn-danger">Eliminar</button></td>
+                <td>
+                    <button class="btn btn-danger" @click="eliminar(i)">Eliminar</button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -42,24 +44,27 @@ export default {
     },
     setup(){
 
-        let concepto=ref("")
-        let cantidad=ref("0")
-        let precio=ref("0.00")
         const datos=reactive([
             {concepto:'Pantalones vaqueros chico',cantidad:2,precio:30.99},
             {concepto:'Camiseta básica chic',cantidad:4,precio:6.99},
             {concepto:'Pijama unisex',cantidad:1,precio:12.50},
             {concepto:'Deportivas Nike',cantidad:1,precio:80.00},
         ])
-               
+        let concepto=ref("")
+        let cantidad=ref("0")
+        let precio=ref("0.00")     
+        
+        //usamos computed para advertir a vue que, si cambian nuestras 
+        //referencias activas, debe recalcular el total:
         const total= computed(()=>{
             let total=0
             datos.forEach(dato=>{
                 total+=dato.cantidad*dato.precio
             })
-            return total
+            return total.toFixed(2) //2 decimales ;)
         })
 
+        //función para agregar un nuevo concepto a la lista:
         const agregar=()=>{
             let nuevo={
                 concepto: concepto.value,
@@ -68,10 +73,15 @@ export default {
             }
             datos.push(nuevo)
         }
+        //función para eliminar un concepto de la lista:
+        const eliminar=(id)=>{
+            if(confirm("¿Seguro que desea eliminar?"))
+                datos.splice(id,1)
+        }
 
         return {
             datos,
-            agregar,
+            agregar, eliminar,
             total,
             concepto,cantidad,precio
         }
@@ -90,5 +100,12 @@ export default {
     .row.nuevo{
         padding:5px;
         background:rgb(194, 243, 207);
+    }
+
+    .table{
+        input{
+            background: transparent;
+            border: 0px;
+        }
     }
 </style>
