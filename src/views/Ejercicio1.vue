@@ -21,7 +21,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import InputNIF from '@/components/InputNIF'
-
+import { ref } from 'vue'
 export default {
   name: 'Ejercicio1',
   components: {

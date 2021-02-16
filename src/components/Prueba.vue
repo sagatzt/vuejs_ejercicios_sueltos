@@ -1,36 +1,37 @@
 <template>
-  <h1 v-if="mostrar" v-html="mensaje"></h1>
-  <button @click="pasarAMinusculas">Minusculas</button>
-  <button @click="pasarAMayusculas">Mayusculas</button>
+    <h1>{{ titulo }}</h1>
+    <h2> {{ tituloConvertido }} </h2>
+    <button id="boton" @click="comprobar">Comprobar</button>
 </template>
 
 <script>
-import {ref, reactive, watch} from 'vue'
-export default {
+import { ref, onMounted, onBeforeMount, onBeforeUpdate, onUnmounted, onActivated } from 'vue'
+export default { //Composition API V.3
     name: 'Prueba',
-    props: {},
-    setup(){ //Composition API v.3.0
-
-        let mensaje=ref("<span style='color:red'>bienvenido</span>")
-        let mostrar=false
-
-        function pasarAMayusculas(){
-            mensaje.value=mensaje.value.toUpperCase()
-        }
-
-        function pasarAMinusculas(){
-            mensaje.value=mensaje.value.toLowerCase()
-        }
-
-        //oye vue, vigila esta variable (mensaje) y, si cambia, ejecuta esto
-        watch(mensaje,(current,prev)=>{
-            console.log(`Valor anterior: ${prev} / Valor actual: ${current}`)
+    props: {
+        titulo: String
+    },
+    setup(props){
+        let tituloConvertido=ref(props.titulo)
+        
+        onMounted(() => {
+            console.log("Aqui el componete se ha montado")
         })
+        onBeforeMount(() => {
+            console.log("Aqui etsamos antes de montar el comopne")
+        })
+        onBeforeUpdate(() => {
+            console.log("asdfadsfasdf")
+        })
+        onUnmounted(() => {
+            console.log("Easdfadsfasdfasd")
+        })
+        onActivated(() => {
+            console.log("Easdfasdfasdfafdadsa")
+        })                                
         
         return {
-            mensaje, mostrar,
-            pasarAMinusculas,
-            pasarAMayusculas
+            tituloConvertido,
         }
     }
 

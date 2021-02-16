@@ -9,11 +9,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(dato,i) in datos" :key="i">
-                <td>{{ dato.concepto }}</td> 
-                <td>{{ dato.precio }}</td>
-                <td>{{ dato.cantidad }}</td>
-                <td>{{ subTotal(dato.precio,dato.cantidad)}}</td>
+            <tr v-for="(item,i) in datos" :key="i">
+                <td>{{ item.concepto }}</td> 
+                <td>{{ item.precio }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.precio*item.cantidad}}</td>
             </tr>
         </tbody>
     </table>
@@ -36,7 +36,10 @@ export default {
         ])
         let total=ref(0)
         
-        const subTotal = (cant,precio)=>cant*precio
+        //const subTotal = (cant,precio)=>cant*precio
+        function subTotal(cant,precio){
+            return cant*precio
+        }
         const calcTotal= ()=>{
             datos.forEach(dato=>total.value+=dato.cantidad*dato.precio)
         }

@@ -31,7 +31,7 @@ export default {
         let username=ref()
         let auth=ref(true)
         const login=()=>{
-            console.log(x1)
+            console.log(x1.childNodes[1].value)
             username.value=x1.lastChild.value
             auth.value=false
         }
