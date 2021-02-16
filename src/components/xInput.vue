@@ -16,6 +16,9 @@ export default {
         text: String
     },
     setup(props){
+
+        let reg=new RegExp(props.mask)
+        reg.test()
         let xClasses = reactive({'x-label':true})
         let text=ref(props.text)
         const exp=new RegExp(`${props.mask}`)

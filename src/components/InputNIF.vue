@@ -1,6 +1,6 @@
 <template>
 <div id="container">
-    <div id="iLabel" class="inputNIF-label">{{label}}</div>
+    <div v-text="label" id="iLabel" class="inputNIF-label"></div>
     <div id="iInput" class="inputNIF-input" contenteditable="true" @keyup="comprobar"></div>
 </div>
 </template>
@@ -13,9 +13,10 @@ export default {
     props: {   
         label: String
     },
-    setup(props){
+    setup(){
         const comprobar=()=>{
             let nif=/^\d{8}[a-zA-Z]{1}$/
+            //let nif = new RegExp(props.mask)
             if(!nif.test(iInput.textContent))
                 iLabel.classList.add('mal')
             else

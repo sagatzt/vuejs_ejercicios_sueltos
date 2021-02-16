@@ -4,6 +4,8 @@ import Home from '../views/Home'
 import Ejercicio2 from '../views/Ejercicio2.vue'
 import Ejercicio3 from '../views/Ejercicio3.vue'
 import Ejercicio4 from '../views/Ejercicio4.vue'
+import Ejercicio5 from '../views/Ejercicio5.vue'
+import Ejercicio6 from '../views/Ejercicio6.vue'
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/Ejercicio4',
     name: 'Ejercicio4',
     component: Ejercicio4
+  },
+  {
+    path: '/Ejercicio5',
+    name: 'Ejercicio5',
+    component: Ejercicio5
+  },
+  {
+    path: '/Ejercicio6',
+    name: 'Ejercicio6',
+    component: Ejercicio6
   }
 
 ]

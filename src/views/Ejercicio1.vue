@@ -10,7 +10,7 @@
             <p>Para recoger la entrada de texto, podéis llamar a la función desde el evento
               @keypress </p>
             <p><pre>&lt;InputNIF label='NIF:'&gt;</pre></p>
-            <InputNIF label='DNI:'></InputNIF> 
+            <InputNIF label='GATO:'></InputNIF> 
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import InputNIF from '@/components/InputNIF'
-
+import { ref } from 'vue'
 export default {
   name: 'Ejercicio1',
   components: {
