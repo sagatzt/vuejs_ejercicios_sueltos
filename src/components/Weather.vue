@@ -49,12 +49,9 @@
  
 <script>
 import { ref, reactive, watch, computed } from 'vue'
-import Municipio from '@/components/Municipio'
+
 export default {
     name:'Weather',
-    components: {
-        Municipio
-    },
     props: {},
     setup(){
         let provincia=ref("01")
