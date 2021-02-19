@@ -3,9 +3,6 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-8 col-md-6">
-          <p style="max-width:400px">
-            <b>PRUEBAS:</b> </p>
-
             <Prueba />
         </div>
       </div>

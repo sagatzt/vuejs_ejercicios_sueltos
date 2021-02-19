@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "jsonld": "^4.0.1",
     "leaflet": "^1.7.1",
     "mongoose": "^5.11.16",
     "mongoose-beautiful-unique-validation": "^7.1.1",
