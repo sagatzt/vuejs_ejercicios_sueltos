@@ -28,7 +28,7 @@
 // @ is an alias to /src
 import Item from '@/components/Item.vue'
 export default {
-  name: 'Pruebas',
+  name: 'Carrito',
   components: {
     Item
   },
