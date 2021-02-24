@@ -16,7 +16,7 @@
               </li>
             </ul>
             <p>
-              <b>TOTAL: </b> 0.00 €
+              <b>TOTAL: </b> {{totalGlobal}} €
             </p>
         </div>
       </div>
@@ -27,26 +27,28 @@
 <script>
 // @ is an alias to /src
 import Item from '@/components/Item.vue'
+import { ref } from 'vue'
 export default {
   name: 'Carrito',
   components: {
     Item
   },
   setup(){
-    
+    let totalGlobal=ref(0)
     const articulos=[
       {nombre:'cerillas',descripcion:'cerillas bonitas',imagen:'avatar1.jpg',precio:'2.20'},
       {nombre:'zapatos',descripcion:'zapatos feos',imagen:'avatar2.jpg',precio:'2.20'},
       {nombre:'martillo',descripcion:'herramienta',imagen:'avatar3.jpg',precio:'2.20'}
     ]
 
-    function verCambio(total,mensaje){
-      console.log(mensaje,total.value)
+    function verCambio(total){
+      console.log(total)
     }
 
     return{
       articulos,
-      verCambio
+      verCambio,
+      totalGlobal
     }
   }
 }

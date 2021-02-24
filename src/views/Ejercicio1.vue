@@ -10,7 +10,7 @@
             <p>Para recoger la entrada de texto, podéis llamar a la función desde el evento
               @keypress </p>
             <p><pre>&lt;InputNIF label='NIF:'&gt;</pre></p>
-            <InputNIF label='GATO:'></InputNIF> 
+            <InputNIF label='PEPE:'></InputNIF> 
         </div>
       </div>
     </div>

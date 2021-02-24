@@ -8,6 +8,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@vitalets/google-translate-api": "^5.0.0",
     "bcrypt": "^5.0.0",
     "jsonld": "^4.0.1",
     "leaflet": "^1.7.1",

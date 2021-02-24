@@ -6,20 +6,28 @@
 </template>
 <script>
 import { ref, reactive } from 'vue'
+import  t from '@vitalets/google-translate-api'
+
 export default {
 
     name:'Prueba',
-    props:{},
+    props:{
+        latitud: String,
+        longitud: String
+    },
     setup(){
-        let informacion = ref("")
-        //CONSUMO DEL API DEL AYUNTAMIENTO DE MADRID
-        fetch('https://datos.madrid.es/egob/catalogo/202105-0-mercadillos.json')
-            //.then(res=>res.json())
-            //.then(datos=>console.log(datos['@graph']))
-        //FIN DEL CONSUMO DEL API
-
+        console.log(t)
+        t('Ik spreek Engels', {to: 'en'})
+        .then(res => {
+            console.log(res.text);
+            //=> I speak English
+            console.log(res.from.language.iso);
+            //=> nl
+        }).catch(err => {
+            console.error(err);
+        });
         return {
-            informacion
+
         }
     }
 

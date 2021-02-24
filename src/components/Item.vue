@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import { ref, reactive, computed, watch } from "vue";
+import { ref, reactive, computed } from "vue";
 export default {
   name: "Item",
   props: {
@@ -28,20 +28,17 @@ export default {
   setup(props, context) {
     let cantidad = ref(1);
     let total = computed(() => {
-      return (props.precio * cantidad.value).toFixed(2);
-    });
-
-    watch(total,()=>{
-      //si total cambiar de valor, ejecutar esto:
-      context.emit('cambioTotal',total,'se ha producido un cambio')
+      let resultado=(props.precio * cantidad.value).toFixed(2)
+      context.emit('cambioTotal',resultado)
+      return resultado
     })
 
     return {
       cantidad,
-      total,
-    };
+      total
+    }
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 img {
