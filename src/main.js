@@ -3,5 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+//implementeacion de idiomas
+import i18next from '@/locales/i18next'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(i18next).use(store).use(router).mount('#app')

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-8 col-md-6">
-          <Prueba />
+          <ApiBackend />
         </div>
       </div>
     </div>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Prueba from '@/components/Prueba'
+import ApiBackend from '@/components/ApiBackend'
 export default {
-  name: 'Pruebas',
+  name: 'Ejercicio9',
   components: {
-    Prueba
+    ApiBackend
   },
   setup(){
     return{

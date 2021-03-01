@@ -10,6 +10,8 @@
   "dependencies": {
     "@vitalets/google-translate-api": "^5.0.0",
     "bcrypt": "^5.0.0",
+    "i18next": "^19.9.1",
+    "i18next-fs-backend": "^1.1.0",
     "jsonld": "^4.0.1",
     "leaflet": "^1.7.1",
     "mongoose": "^5.11.16",
