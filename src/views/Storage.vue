@@ -4,7 +4,6 @@
       <div class="row justify-content-center">
         <div class="col-8 col-md-6">
           <Store />
-          <Store />
         </div>
       </div>
     </div>

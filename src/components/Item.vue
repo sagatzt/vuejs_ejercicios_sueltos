@@ -16,7 +16,8 @@
   </div>
 </template>
 <script>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed,watch } from "vue";
+import {useStore} from 'vuex'
 export default {
   name: "Item",
   props: {
@@ -26,12 +27,14 @@ export default {
     precio: Number,
   },
   setup(props, context) {
-    let cantidad = ref(1);
+    const store=useStore()
+    let cantidad = ref(1)
     let total = computed(() => {
-      let resultado=(props.precio * cantidad.value).toFixed(2)
-      context.emit('cambioTotal',resultado)
-      return resultado
+      let resultado=(props.precio * cantidad.value)
+      context.emit('cambioTotal',props.titulo,resultado)
+      return resultado.toFixed(2)
     })
+
 
     return {
       cantidad,
@@ -42,7 +45,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 img {
-  max-width: 90px;
+  max-width: 40px;
 }
 input {
   border:0px;
@@ -51,9 +54,12 @@ input {
 p{
   text-align: left;
   font-size: .8em;
+  margin:0px;
   &.titulo{
     font-size: 1em;
     font-weight: 900;
   }
+
 }
+
 </style>

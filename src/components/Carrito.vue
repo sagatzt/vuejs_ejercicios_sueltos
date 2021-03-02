@@ -27,22 +27,32 @@
 <script>
 // @ is an alias to /src
 import Item from '@/components/Item.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
 export default {
   name: 'Carrito',
   components: {
     Item
   },
   setup(){
-    let totalGlobal=ref(0)
-    const articulos=[
+    let totalGlobal=computed(()=>store.getters.getTotal)
+    const store = useStore()
+    let articulos=[
       {nombre:'cerillas',descripcion:'cerillas bonitas',imagen:'avatar1.jpg',precio:'2.20'},
       {nombre:'zapatos',descripcion:'zapatos feos',imagen:'avatar2.jpg',precio:'2.20'},
       {nombre:'martillo',descripcion:'herramienta',imagen:'avatar3.jpg',precio:'2.20'}
     ]
 
-    function verCambio(total){
-      console.log(total)
+    function verCambio(art,total){
+      console.log(art)
+      let index=articulos.findIndex(articulo=>articulo.nombre==art)
+      console.log(index)
+      articulos[index].subtotal=total
+      let acumula=0
+      articulos.forEach(articulo=>{
+        acumula+=articulo.subtotal
+      })
+      store.commit('setTotal',acumula.toFixed(2))
     }
 
     return{

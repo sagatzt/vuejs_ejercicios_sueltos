@@ -1,5 +1,7 @@
 <template>
+
   <div id="nav">
+    <div class="informacion"><Userdata /></div>
     <router-link to="/">Home</router-link> |
     <router-link to="/ejercicio1">Ejercicio1</router-link> |
     <router-link to="/ejercicio2">Ejercicio2</router-link> |  
@@ -36,13 +38,19 @@
       color: #42b983;
     }
   }
+  .informacion{
+    text-align:right;
+    padding:10px;
+    background: #42b983;
+  }
 }
 </style>
 
 <script>
-
+import Userdata from '@/components/Userdata'
 export default {
   components: {
+    Userdata
   }
 }
 </script>

@@ -27,7 +27,7 @@ export default {
       let langs=reactive(i18next.languages)
       let currentLang=ref(i18next.language)
       let lang=computed(()=>{
-        return i18next.getDataByLanguage(currentLang.value).translation
+        return i18next.getDataByLanguage(currentLang.value)
       })
 
       return {
