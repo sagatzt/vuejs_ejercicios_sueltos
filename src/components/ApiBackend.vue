@@ -4,10 +4,13 @@
         Nombre: <input v-model="nombre">
         Apellidos: <input v-model="apellidos">
         <button @click="enviar" class="btn btn-primary">Enviar</button>
+
+    <!-- esto es una tabla con el listado de usuarios-->    
     <div v-for="(usuario,ind) in usuarios" :key="ind">
         {{usuario.nombre}} {{usuario.apellidos}} 
         <a @click="eliminar(usuario._id)" class="eliminar" >Eliminar</a>
     </div>
+
   </div>
 </template>
 <script>
@@ -74,5 +77,8 @@ export default {
 <style lang="scss" scoped>
     a.eliminar{
         color:red;
+    }
+    input,button{
+        margin:5px;
     }
 </style>

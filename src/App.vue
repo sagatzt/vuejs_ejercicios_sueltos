@@ -1,7 +1,6 @@
 <template>
 
-  <div id="nav">
-    <div class="informacion"><Userdata /></div>
+  <div id="nav"> 
     <router-link to="/">Home</router-link> |
     <router-link to="/ejercicio1">Ejercicio1</router-link> |
     <router-link to="/ejercicio2">Ejercicio2</router-link> |  

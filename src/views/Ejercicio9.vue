@@ -9,7 +9,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import ApiBackend from '@/components/ApiBackend'
 export default {
@@ -18,8 +17,9 @@ export default {
     ApiBackend
   },
   setup(){
+    let palabra="palabra"
     return{
-
+      palabra
     }
   }
 }
